@@ -6,6 +6,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.callbacks import get_openai_callback
 from src.mcqgenerator.utils import read_file, get_table_data
 import traceback
+import warnings
 
 # Page configuration
 st.set_page_config(
@@ -81,7 +82,7 @@ if 'generate' in st.session_state and st.session_state.generate:
                         "number": st.session_state.mcq_count,
                         "subject": st.session_state.subject,
                         "tone": st.session_state.tone,
-                        "response_json": json.dumps(RESPONSE_JSON)
+                        #"response_json": json.dumps(response.json)
                     }
                 )
             
