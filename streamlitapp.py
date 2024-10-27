@@ -4,7 +4,7 @@ import json
 import pandas as pd
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks import get_openai_callback
-from utils import read_file, get_table_data
+from src.mcqgenerator.utils import read_file, get_table_data
 
 # Page configuration
 st.set_page_config(
