@@ -8,6 +8,39 @@ from src.mcqgenerator.utils import read_file, get_table_data
 import traceback
 import warnings
 
+RESPONSE_JSON = {
+    "1": {
+        "mcq": "multiple choice question",
+        "options": {
+            "a": "choice here",
+            "b": "choice here",
+            "c": "choice here",
+            "d": "choice here",
+        },
+        "correct": "correct answer",
+    },
+    "2": {
+        "mcq": "multiple choice question",
+        "options": {
+            "a": "choice here",
+            "b": "choice here",
+            "c": "choice here",
+            "d": "choice here",
+        },
+        "correct": "correct answer",
+    },
+    "3": {
+        "mcq": "multiple choice question",
+        "options": {
+            "a": "choice here",
+            "b": "choice here",
+            "c": "choice here",
+            "d": "choice here",
+        },
+        "correct": "correct answer",
+    },
+}
+
 # Page configuration
 st.set_page_config(
     page_title="MCQ Generator",
@@ -82,7 +115,7 @@ if 'generate' in st.session_state and st.session_state.generate:
                         "number": st.session_state.mcq_count,
                         "subject": st.session_state.subject,
                         "tone": st.session_state.tone,
-                        #"response_json": json.dumps(response.json)
+                        "response_json": json.dumps(RESPONSE_JSON)
                     }
                 )
             
