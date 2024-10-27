@@ -5,6 +5,7 @@ import pandas as pd
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks import get_openai_callback
 from src.mcqgenerator.utils import read_file, get_table_data
+import traceback
 
 # Page configuration
 st.set_page_config(
@@ -31,7 +32,7 @@ with st.sidebar:
     
     subject = st.selectbox(
         "Select Subject",
-        ["General Knowledge", "Science", "Mathematics", "English", "History", "Geography", "Computer Science"]
+        ["Machine Learning", "Science", "Mathematics", "English", "History", "Geography", "Computer Science"]
     )
     
     tone = st.selectbox(
@@ -70,7 +71,7 @@ if 'generate' in st.session_state and st.session_state.generate:
             )
             
             # Import and set up chains
-            from mcq_chains import generate_evaluate_chain
+            from  src.mcqgenerator.mcqgenerator import generate_evaluate_chain
             
             # Generate MCQs
             with get_openai_callback() as cb:
