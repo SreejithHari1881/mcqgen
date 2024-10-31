@@ -7,6 +7,7 @@ from langchain.callbacks import get_openai_callback
 from src.mcqgenerator.utils import read_file, get_table_data
 import traceback
 import warnings
+import langchain_community
 
 RESPONSE_JSON = {
     "1": {
