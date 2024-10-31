@@ -93,7 +93,7 @@ if 'generate' in st.session_state and st.session_state.generate:
     with st.spinner("Generating MCQs..."):
         try:
             # Get API Key from environment variable
-            api_key = os.getenv("OPENAI_API_KEY")
+            api_key = os.environ.get("OPENAI_API_KEY")
             if not api_key:
                 st.error("OpenAI API key not found. Please check your environment variables.")
                 st.stop()
